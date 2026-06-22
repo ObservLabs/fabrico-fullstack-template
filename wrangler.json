@@ -15,11 +15,5 @@
 	"upload_source_maps": true,
 	"observability": {
 		"enabled": true
-	},
-	"r2_buckets": [
-		{
-			"binding": "STORAGE",
-			"bucket_name": "fabrico-storage"
-		}
-	]
+	}
 }
