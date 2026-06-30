@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.41
         version: 2.0.48(zod@4.4.3)
       '@fabrico/sdk':
-        specifier: ^1.15.1
-        version: 1.15.1(@opentelemetry/api@1.9.1)(hono@4.12.23)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3)
+        specifier: ^1.15.5
+        version: 1.15.5(@opentelemetry/api@1.9.1)(hono@4.12.23)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3)
       '@hono/swagger-ui':
         specifier: ^0.6.1
         version: 0.6.1(hono@4.12.23)
@@ -722,8 +722,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fabrico/sdk@1.15.1':
-    resolution: {integrity: sha512-PzQ1wLKlG4RpNzdVPR6aydHcQaj5M3KZ15nQFp0Iq0CaYHJRG4EHhZ8bvBDlVKO579u1GuBh0HfI+CIMV6zEVQ==}
+  '@fabrico/sdk@1.15.5':
+    resolution: {integrity: sha512-lBnVcKkXgEwLWAZoBi4sCastlvYY3u72VWGFclV1cpEOHL1D3oUUieQ3PZRRE34sSqyevpwRb8tDet/8e8ZcMA==}
     peerDependencies:
       hono: ^4.12.23
       react: ^19.2.6
@@ -3571,7 +3571,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@fabrico/sdk@1.15.1(@opentelemetry/api@1.9.1)(hono@4.12.23)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3)':
+  '@fabrico/sdk@1.15.5(@opentelemetry/api@1.9.1)(hono@4.12.23)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3)':
     dependencies:
       '@ai-sdk/openai-compatible': 2.0.48(zod@4.4.3)
       '@ai-sdk/provider': 3.0.10
