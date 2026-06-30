@@ -87,9 +87,9 @@
     "cf-typegen": "wrangler types",
     "check": "tsc && vite build && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "lint": "eslint .",
-    "preview": "vite build && vite preview"
+    "preview": "vite build && vite preview --host 0.0.0.0"
   },
   "type": "module"
 }
