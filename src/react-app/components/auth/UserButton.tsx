@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useFabrico } from "@fabrico/sdk/react";
-import { LogOut, User, Settings, Shield } from "lucide-react";
+import { LogOut, User, Settings } from "lucide-react";
 
 export function UserButton({ afterSignOutUrl = "/" }: { afterSignOutUrl?: string }) {
   const { user, isLoaded, signOut } = useFabrico();

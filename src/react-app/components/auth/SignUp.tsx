@@ -37,8 +37,10 @@ export function SignUp({ redirectTo = "/" }: { redirectTo?: string }) {
     try {
       await client.auth.sendOtp(email);
       setOtpSent(true);
-    } catch (err: any) {
-      setError(err.message || "Failed to send code. Please try again.");
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Failed to send code. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -52,8 +54,10 @@ export function SignUp({ redirectTo = "/" }: { redirectTo?: string }) {
     try {
       await client.auth.verifyOtp(email, code);
       window.location.href = redirectTo;
-    } catch (err: any) {
-      setError(err.message || "Invalid code. Please check and try again.");
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Invalid code. Please check and try again."
+      );
     } finally {
       setLoading(false);
     }
