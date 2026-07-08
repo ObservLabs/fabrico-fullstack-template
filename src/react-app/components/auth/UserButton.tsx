@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { useFabrico } from "@fabrico/sdk/react";
 import { LogOut, User, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function UserButton({ afterSignOutUrl = "/" }: { afterSignOutUrl?: string }) {
   const { user, isLoaded, signOut } = useFabrico();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -56,26 +58,19 @@ export function UserButton({ afterSignOutUrl = "/" }: { afterSignOutUrl?: string
           </div>
           <div className="p-1.5 space-y-0.5">
             <button
-              onClick={() => { /* Navigate to profile */ setIsOpen(false); }}
+              onClick={() => { setIsOpen(false); navigate("/profile"); }}
               className="flex items-center w-full px-3 py-2 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-accent rounded-lg transition-all group"
             >
-              <User className="mr-2.5 size-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <Settings className="mr-2.5 size-4 text-muted-foreground group-hover:text-foreground transition-colors" />
               Manage account
             </button>
-            <button
-              onClick={() => { setIsOpen(false); }}
-              className="flex items-center w-full px-3 py-2 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-accent rounded-lg transition-all group"
-            >
-              <Settings className="mr-2.5 size-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              Settings
-            </button>
           </div>
-          <div className="p-1.5 pt-0 border-t border-border/40 mt-1.5 bg-muted/5">
+          <div className="p-1.5 pt-0 border-t border-border/40 mt-1.5">
             <button
               onClick={handleSignOut}
-              className="flex items-center w-full px-3 py-2.5 text-sm font-bold text-destructive hover:bg-destructive/10 rounded-lg transition-all group"
+              className="flex items-center w-full px-3 py-2 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-accent rounded-lg transition-all group"
             >
-              <LogOut className="mr-2.5 size-4 transition-transform group-hover:translate-x-0.5" />
+              <LogOut className="mr-2.5 size-4 text-muted-foreground group-hover:text-foreground transition-colors" />
               Sign out
             </button>
           </div>
