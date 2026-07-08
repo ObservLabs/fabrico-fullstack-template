@@ -103,19 +103,16 @@ export function UserProfile({ afterSignOutUrl = "/" }: { afterSignOutUrl?: strin
         </div>
       </form>
 
-      {/* Danger zone */}
+      {/* Sign out */}
       <div className="pt-8 border-t border-border/40">
-        <div className="p-6 rounded-2xl bg-destructive/5 border border-destructive/10">
-          <h4 className="text-sm font-bold uppercase tracking-widest text-destructive mb-4">Danger Zone</h4>
-          <Button
-            variant="destructive"
-            onClick={handleSignOut}
-            className="w-full sm:w-auto h-11 px-8 font-bold shadow-lg shadow-destructive/20 group"
-          >
-            <LogOut className="mr-2 size-4 transition-transform group-hover:-translate-x-0.5" />
-            Sign out from this device
-          </Button>
-        </div>
+        <Button
+          variant="outline"
+          onClick={handleSignOut}
+          className="w-full sm:w-auto h-11 px-6 font-medium text-muted-foreground hover:text-foreground shadow-sm transition-colors"
+        >
+          <LogOut className="mr-2 size-4" />
+          Sign out of your account
+        </Button>
       </div>
     </div>
   );
