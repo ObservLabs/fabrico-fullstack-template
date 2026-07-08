@@ -6,7 +6,7 @@ import { Mail, ArrowRight } from "lucide-react";
 import { GoogleIcon, DiscordIcon, GithubIcon } from "./Icons";
 
 export function SignIn({ redirectTo = "/" }: { redirectTo?: string }) {
-  const { user, isLoaded, client, config } = useFabrico();
+  const { user, isLoaded, client, config, signInOAuth } = useFabrico();
   const [email, setEmail] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [code, setCode] = useState("");
@@ -64,7 +64,7 @@ export function SignIn({ redirectTo = "/" }: { redirectTo?: string }) {
   };
 
   const handleOAuth = (provider: "github" | "google" | "discord") => {
-    client.auth.signInOAuth(provider, { redirectTo });
+    signInOAuth(provider, { redirectTo });
   };
 
   return (
